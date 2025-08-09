@@ -1,0 +1,21 @@
+name: GitHub Context
+
+on:
+ workflow_dispatch
+jobs:
+ github_context:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Print Info about GitHub
+     run: |
+      echo 'Repository owner name ${{github.repository_owner}}'
+      echo 'Actor ${{github.actor}}'
+      echo 'Workflow name ${{github.workflow}}'
+      echo 'Run id ${{github.run_id	}}'
+      echo 'Run number ${{github.run_number}}'
+      echo 'server url ${{github.server_url}}'
+      echo 'ref name ${{github.ref_name}}'
+      echo 'ref type ${{github.ref_type}}'
+      echo 'ref ${{github.ref}}'
+      echo 'actor id ${{github.actor_id}}'
+      echo 'api url ${{github.api_url}}'
