@@ -19,3 +19,10 @@ jobs:
       echo 'ref ${{github.ref}}'
       echo 'actor id ${{github.actor_id}}'
       echo 'api url ${{github.api_url}}'
+   -  name: Examples
+      if: github.repository_owner == 'NitinRawat99'
+      run: echo 'repo running'
+   -  if: github.server_url == 'https://github.com'
+      run: echo 'server name is visible'
+   -  if: github.ref_name == 'main'
+      run: echo 'ref name is visible'
