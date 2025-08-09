@@ -1,0 +1,16 @@
+name: Variable
+
+on:
+ workflow_dispatch
+env:
+ MY_VAR: case 1
+jobs:
+ variables:
+  env:
+   MY_VAR: case 2
+  runs-on: ubuntu-latest
+  steps:
+  - name: Print
+    run: echo '${{env.MY_VAR}}'
+    env:
+     MY_VAR: case 3
