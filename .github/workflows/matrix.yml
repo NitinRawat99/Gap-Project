@@ -6,11 +6,25 @@ jobs:
  matrix-jobs:
   runs-on: ${{matrix.os}}
   strategy:
+    max-parallel: 2
     matrix:
-     os:
-      - ubuntu-latest
-      - windows-latest
-     java-version: [17,21]
+     include:
+     - index: 0
+       total: 4 
+       os: ubuntu-latest
+       java: 17
+     - index: 1
+       total: 4
+       os: windows-latest
+       java: 21
+     - index: 2
+       total: 4
+       os: windows-latest
+       java: 17
+     - index: 3
+       total: 4
+       os: windows-latest
+       java: 21
   steps:
    - name: Setup Java JDK
      uses: actions/setup-java@3.14.1
