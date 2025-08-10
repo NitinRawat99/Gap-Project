@@ -16,4 +16,4 @@ jobs:
      echo '${{vars.MY_VAR}}'
      echo '${{secrets.PASSWORD}}'
     env:
-     MY_VAR: case 3
+     MY_VAR: 6+7
